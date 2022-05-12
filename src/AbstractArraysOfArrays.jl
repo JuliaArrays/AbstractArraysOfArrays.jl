@@ -37,7 +37,16 @@ else
     abstract type AbstractSlices{T,N} <: AbstractArray{T,N} end
 end
 
+"""
+    const SlicedArrayLike = Union{EachRow,EachCol,EachSlice,AbstractSlices}
+
+Something that represents a sliced array. Should support
+
+* `parent(sliced::SlicedArrayLike)` should return the original unsliced array
+* [`getslicemap(sliced::SlicedArrayLike)`](@ref)
+"""
 const SlicedArrayLike = Union{EachRow,EachCol,EachSlice,AbstractSlices}
+export SlicedArrayLike
 
 include("slicemap.jl")
 
