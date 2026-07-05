@@ -3,7 +3,7 @@
 """
     getslicemap(slices)
 
-Return the slicemap of `slices` in respect to `parent(slices)`.
+Return the slicemap of `slices` with respect to `parent(slices)`.
 """
 function getslicemap end
 export getslicemap
